@@ -1,126 +1,104 @@
+@import "Nord.css";
 * {
     font-family: "Fira Sans Semibold", "Font Awesome 6 Free", FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+    border: none;
+    border-radius: 4px;
+    min-height: 0;
+    margin: 1px;
 }
 
 window#waybar {
-    background-color: #0f1117;
-    font-size: 14px;
-    border-radius: 0px;
-    margin: 0px;
-    padding: 0;
-}
-
-/* Left-most: Arch icon */
-#custom-appmenu {
-  font-size: 4;
-  background-image: url('/usr/share/icons/cachyos.svg');
-  background-color: #1e222a;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
-  padding: 0px 12px;
-    
-}
-
-/* Right-most: Clock */
-#clock {
-    font-size: 14px;
-    background-color: #1e222a;
-    color: #c0c0c0;
-    border-radius: 0px;
-    padding: 0px 8px;
-}
-
-/* Active window title */
-#window {
-    font-size: 14px;
-    font-weight: 800;
-    color: #e0e0e0;
-    border-radius: 0px;
-    padding: 4px 12px;
-    background-color: #1e222a;
-}
-
-/* Workspace container */
-#niri-workspaces {
-    background: #1e222a;
+    background-color: @nord0;
+    color: @nord4;
+    font-family: "Hack Nerd Font Mono";
+    font-size: 12px;
     font-weight: bold;
-    border-radius: 0px;
-    font-size: 8px;
-    color: #e0e0e0;
 }
 
-/* Individual workspace buttons */
-#niri-workspaces button {
-    border-radius: 0px;
-    font-size: 8px;
+#clock,
+#cpu,
+#memory,
+#mode,
+#network,
+#pulseaudio,
+#temperature,
+#tray,
+#backlight,
+#language,
+#mode,
+#memory,
+#temperature,
+#workspaces {
+    color: @nord4;
+    background: @nord2;
+}
+
+#workspaces button {
+  color: @nord4;
 }
 
 #workspaces button.active {
-    border-radius: 0px;
-    color: #0f1117;
-    background: #00ac89;
+    color: @nord2;
+    background: @nord14;
 }
-
-#workspaces button:hover {
-    border-radius: 0px;
-    background: #0d3531;
-    border-width: 0px;
-}
-
-/* Power/exit button */
-#custom-exit {
-    background-color: #00ac89;
-    font-size: 14px;
-    font-weight: 800;
-    color: #0f1117;
-    padding: 0px 6px;
-    margin: 2px 2px 2px 0;
-}
-
-/* Tooltips */
-tooltip {
-    border-radius: 12px;
-    background-color: #0f1117;
-    color: #c0c0c0;
-    padding: 4px 8px;
-}
-
-/* Taskbar */
-#taskbar {
-    background-color: #1e222a;
-    margin: 0px;
-    border-radius: 0px;
+#window {
+    margin-right: 40px;
+    margin-left: 40px;
     font-weight: normal;
 }
-
-/* All system info modules */
-#backlight,
-#pulseaudio,
-#network,
-#bluetooth,
-#battery,
-#tray,
-#custom-updates,
-#custom-notification {
-    background-color: #1e222a;
-    font-size: 14px;
-    font-weight: 800;
-    color: #c0c0c0;
-    border-radius: 0px;
-    padding: 4px 10px;
+#pulseaudio, #network, #cpu, #memory, #temperature, #clock, #tray {
+    padding: 0 8px;
+}
+#bluetooth {
+    background: @nord7;
+    font-size: 1.2em;
+    font-weight: bold;
+    padding: 0 0.6em;
+}
+#idle_inhibitor {
+    background: @mode;
+    font-weight: bold;
+    padding: 0 0.6em;
 }
 
-/* Battery critical warning */
-#battery.critical:not(.charging) {
-    background-color: #e65100;
-    color: #ffffff;
-    animation: blink 0.5s linear infinite alternate;
+#memory {
+    background: @nord7;
 }
 
-@keyframes blink {
-    to {
-        background-color: #0f1117;
-        color: #ffffff;
-    }
+#cpu {
+    background: @nord2;
+    color: @nord4;
+}
+#temperature {
+    background-color: @nord2;
+    color: @nord4;
+}
+
+#pulseaudio { 
+    background: @nord2;
+    color: @nord4;
+}
+
+#battery {
+    background: @nord2;
+    padding: 0px 8px 1px 8px;
+}
+
+#backlight {
+    background: @nord7;
+    padding: 0px 8px 1px 8px;
+}
+
+#exit {
+    padding: 0px 10px 1px 10px;
+    font-size: 24;
+    border-style: solid;
+    border-width: 2px;
+    border-color: @nord7;
+    border-radius: 15px;
+}
+#custom-media {
+    padding: 0px 8px 2px 8px;
+    background: @nord7;
+    color: @nord4;
 }

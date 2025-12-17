@@ -9,18 +9,16 @@
     "~/.config/waybar/modules.json"
   ],
   "modules-left": [
-    "custom/appmenu",
-    "wlr/taskbar",
-    "niri/window"
+    "niri/workspaces"
   ],
   "modules-center": [
-    "niri/workspaces"
+    "clock"
   ],
   "modules-right": [
     "tray",
     "pulseaudio",
+    "network",
     "battery",
-    "clock",
     "custom/exit"
   ]
 }
