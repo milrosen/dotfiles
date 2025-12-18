@@ -20,6 +20,7 @@ window#waybar {
 #memory,
 #mode,
 #network,
+#battery,
 #pulseaudio,
 #temperature,
 #tray,
@@ -39,14 +40,22 @@ window#waybar {
 
 #workspaces button.active {
     color: @nord2;
-    background: @nord14;
+    background: @nord7;
 }
 #window {
     margin-right: 40px;
     margin-left: 40px;
     font-weight: normal;
 }
-#pulseaudio, #network, #cpu, #memory, #temperature, #clock, #tray {
+#pulseaudio,
+#network,
+#battery,
+#cpu,
+#memory,
+#temperature,
+#clock,
+#backlight,
+#tray {
     padding: 0 8px;
 }
 #bluetooth {
@@ -77,16 +86,6 @@ window#waybar {
 #pulseaudio { 
     background: @nord2;
     color: @nord4;
-}
-
-#battery {
-    background: @nord2;
-    padding: 0px 8px 1px 8px;
-}
-
-#backlight {
-    background: @nord7;
-    padding: 0px 8px 1px 8px;
 }
 
 #exit {

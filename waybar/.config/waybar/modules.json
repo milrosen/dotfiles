@@ -24,13 +24,10 @@
     }
   },
   "network": {
-    "format-ethernet": "<span size='x-large'></span>",
-    "format-wifi": "<span size='x-large'></span> {signalStrength}%",
+    "format-wifi": " {signalStrength}%",
     "tooltip-format": "If: {ifname}\nIP: {ipaddr}\nSN: {netmask}\nGW: {gwaddr}",
     "format-linked": "{ifname} (No IP) ",
     "format-disconnected": "Disconnected ⚠",
-    "on-click-right": "nm-connection-editor",
-    "on-click": "plasmawindowe$ org.kde.plasma.networkmanagement"
   },
   // niri Window
   "niri/window": {
@@ -131,7 +128,7 @@
   "pulseaudio": {
     // "scroll-step": 1, // %, can be a float
     "format": "{icon}  {volume}%",
-    "format-bluetooth": "{volume}% {icon} {format_source}",
+    "format-bluetooth": "{volume}% {icon}  {format_source}",
     "format-bluetooth-muted": " {icon} {format_source}",
     "format-muted": " {format_source}",
     "format-source": "{volume}% ",

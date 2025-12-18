@@ -192,7 +192,7 @@ binds {
 
         focus-ring {
             width 2
-            active-color "#00ac89"
+            active-color "#8fbcbb"
             inactive-color "#505050"
         }
 
