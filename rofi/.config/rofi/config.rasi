@@ -1,12 +1,10 @@
-
 configuration {
-    font: "Envy Code R 10";
-    line-margin: 10;
-
     modes: "window,drun,run,ssh";
-
     font: "Fiera Sans Semibold 12";
+
     drun-display-format: "{name}";
+
+    line-margin: 10;
 
     display-ssh:    "  ";
     display-run:    "  ";
