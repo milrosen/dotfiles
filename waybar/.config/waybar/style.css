@@ -10,7 +10,6 @@
 window#waybar {
     background-color: @nord0;
     color: @nord4;
-    font-family: "Hack Nerd Font Mono";
     font-size: 12px;
     font-weight: bold;
 }
