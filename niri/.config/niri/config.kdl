@@ -44,6 +44,7 @@ binds {
     MOD+B                               hotkey-overlay-title="Open Browser: firefox" { spawn-sh "firefox"; }
     MOD+ALT+L                           hotkey-overlay-title="Lock Screen: swaylock" { spawn-sh "swaylock"; }
     MOD+ALT+A                           hotkey-overlay-title="Calendar: add appointment" { spawn-sh "$HOME/.config/rofi/scripts/quickadd.sh"; }
+
     // Please choose your own file manager
     MOD+E                             hotkey-overlay-title="File Manager: Nautilus" { spawn-sh "nautilus"; }
 
@@ -137,7 +138,7 @@ binds {
     MOD+TAB                             { focus-workspace-previous; }
 
     // ─── Layout Controls ───
-    MOD+CTRL+F                          { expand-column-to-available-width; }
+    MOD+CTRL+F                          { fullscreen-window; }
     MOD+C                               { center-column; }
     MOD+CTRL+C                          { center-visible-columns; }
     MOD+MINUS                           { set-column-width "-10%"; }
@@ -147,7 +148,7 @@ binds {
 
     // ─── Modes ───
     MOD+T                               { toggle-window-floating; }
-    MOD+F                               { fullscreen-window; }
+    MOD+F                               { maximize-column; }
     MOD+W                               { toggle-column-tabbed-display; }
 
     // ─── Screenshots ───
