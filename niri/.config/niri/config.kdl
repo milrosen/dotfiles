@@ -40,11 +40,11 @@ binds {
 
     // ─── Applications ───
     MOD+RETURN                          hotkey-overlay-title="Open Terminal: alacritty" { spawn-sh "alacritty"; }
-    MOD+SPACE                           hotkey-overlay-title="Open App Launcher: rofi" { spawn-sh "rofi -show combi -modes combi -combi-modes 'windo,drun,run'"; }
+    MOD+SPACE                           hotkey-overlay-title="Open App Launcher: rofi" { spawn-sh "rofi -show combi -modes combi -combi-modes 'drun,run'"; }
     MOD+B                               hotkey-overlay-title="Open Browser: firefox" { spawn-sh "firefox"; }
     MOD+ALT+L                           hotkey-overlay-title="Lock Screen: swaylock" { spawn-sh "swaylock"; }
     MOD+ALT+A                           hotkey-overlay-title="Calendar: add appointment" { spawn-sh "$HOME/.config/rofi/scripts/quickadd.sh"; }
-    MOD+V                               hotkey-overlay-title="Open Paste Menu" { spawn-sh "cliphist list | rofi -p 'Copy' -dmenu -display-columns 2 | cliphist decode | wl-copy && wtype -M ctrl v -m ctrl"; }
+    MOD+V                               hotkey-overlay-title="Open Paste Menu" { spawn-sh "cliphist list | rofi -p 'Copy' -i -dmenu -display-columns 2 | cliphist decode | wl-copy && wtype -M ctrl v -m ctrl"; }
     MOD+ALT+V                           hotkey-overlay-title="Delete from Cliphist" {spawn-sh "cliphist list | rofi -p 'Delete' -dmenu -display-columns 2 | cliphist delete"; } 
 
     // Please choose your own file manager
