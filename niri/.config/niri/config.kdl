@@ -40,10 +40,12 @@ binds {
 
     // ─── Applications ───
     MOD+RETURN                          hotkey-overlay-title="Open Terminal: alacritty" { spawn-sh "alacritty"; }
-    MOD+SPACE                           hotkey-overlay-title="Open App Launcher: wofi" { spawn-sh "rofi -show combi -modes combi -combi-modes 'windo,drun,run'"; }
+    MOD+SPACE                           hotkey-overlay-title="Open App Launcher: rofi" { spawn-sh "rofi -show combi -modes combi -combi-modes 'windo,drun,run'"; }
     MOD+B                               hotkey-overlay-title="Open Browser: firefox" { spawn-sh "firefox"; }
     MOD+ALT+L                           hotkey-overlay-title="Lock Screen: swaylock" { spawn-sh "swaylock"; }
     MOD+ALT+A                           hotkey-overlay-title="Calendar: add appointment" { spawn-sh "$HOME/.config/rofi/scripts/quickadd.sh"; }
+    MOD+V                               hotkey-overlay-title="Open Paste Menu" { spawn-sh "cliphist list | rofi -p 'Copy' -dmenu -display-columns 2 | cliphist decode | wl-copy && wtype -M ctrl v -m ctrl"; }
+    MOD+ALT+V                           hotkey-overlay-title="Delete from Cliphist" {spawn-sh "cliphist list | rofi -p 'Delete' -dmenu -display-columns 2 | cliphist delete"; } 
 
     // Please choose your own file manager
     MOD+E                             hotkey-overlay-title="File Manager: Nautilus" { spawn-sh "nautilus"; }
@@ -148,6 +150,7 @@ binds {
 
     // ─── Modes ───
     MOD+T                               { toggle-window-floating; }
+    MOD+ALT+F                           { toggle-windowed-fullscreen; }
     MOD+F                               { maximize-column; }
     MOD+W                               { toggle-column-tabbed-display; }
 
@@ -172,7 +175,11 @@ binds {
 
     spawn-sh-at-startup "/usr/lib/polkit-kde-authentication-agent-1 &" // Polkit
     spawn-sh-at-startup "swww-daemon" // Wallpaper daemon
-    spawn-sh-at-startup "swww img /usr/share/wallpapers/personal-wallpapers/rocks.png" // Set wallpaper
+    spawn-sh-at-startup "swww img /usr/share/wallpapers/personal-wallpapers/metropolis_blue.png" // Set wallpaper
+
+    spawn-sh-at-startup "wl-paste --type text --watch cliphist store" // start cliphist text
+    spawn-sh-at-startup "wl-paste --type image --watch cliphist store"
+
     spawn-sh-at-startup "waybar" // Launch waybar
 
     prefer-no-csd // Disable program decorations
@@ -244,7 +251,7 @@ binds {
     }
 
     window-rule {
-        geometry-corner-radius 7// Set every window radius to 20
+        geometry-corner-radius 8// Set every window radius to 20
         clip-to-geometry true
     }
 

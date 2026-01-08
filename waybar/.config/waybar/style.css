@@ -31,16 +31,16 @@ window#waybar {
 #temperature,
 #workspaces {
     color: @nord4;
-    background: @nord2;
 }
 
 #workspaces button {
   color: @nord4;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 
 #workspaces button.active {
-    color: @nord2;
-    background: @nord7;
+    color: @nord7;
 }
 #window {
     margin-right: 40px;
@@ -83,11 +83,6 @@ window#waybar {
     color: @nord4;
 }
 
-#pulseaudio { 
-    background: @nord2;
-    color: @nord4;
-}
-
 #exit {
     padding: 0px 10px 1px 10px;
     font-size: 24;
@@ -96,6 +91,7 @@ window#waybar {
     border-color: @nord7;
     border-radius: 15px;
 }
+
 #custom-media {
     padding: 0px 8px 2px 8px;
     background: @nord7;

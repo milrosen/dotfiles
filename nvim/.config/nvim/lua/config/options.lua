@@ -4,5 +4,6 @@
 
 vim.g.nord_disable_background = true
 vim.g.nord_cursorline_transparent = true
+vim.g.autoformat = false
 vim.opt.swapfile = false
 vim.opt.cursorline = false

@@ -61,7 +61,7 @@ inputbar {
 
     border: 1px;
     border-radius:  6px;
-    border-color: @nord10;
+    border-color: @nord7;
 }
 
 entry, prompt {

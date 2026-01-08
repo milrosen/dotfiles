@@ -12,7 +12,8 @@
     "niri/workspaces"
   ],
   "modules-center": [
-    "clock"
+    "clock",
+    "custom/updates"
   ],
   "modules-right": [
     "tray",
