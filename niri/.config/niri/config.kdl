@@ -242,6 +242,14 @@ binds {
         }
     }
 
+cursor {
+  xcursor-theme "capitaine-cursors"
+  xcursor-size 22
+
+  hide-when-typing
+  hide-after-inactive-ms 1000
+}
+
 // ────────────── Window Rules ──────────────
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Window-Rules
 
