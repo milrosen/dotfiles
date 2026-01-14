@@ -40,7 +40,7 @@ binds {
 
     // ─── Applications ───
     MOD+RETURN                          hotkey-overlay-title="Open Terminal: alacritty" { spawn-sh "alacritty"; }
-    MOD+SPACE                           hotkey-overlay-title="Open App Launcher: rofi" { spawn-sh "rofi -show combi -modes combi -combi-modes 'drun,run'"; }
+    MOD+SPACE                           hotkey-overlay-title="Open App Launcher: rofi" { spawn-sh "rofi -show combi -modes combi -combi-modes 'drun,run,recursivebrowser'"; }
     MOD+B                               hotkey-overlay-title="Open Browser: firefox" { spawn-sh "firefox"; }
     MOD+ALT+L                           hotkey-overlay-title="Lock Screen: swaylock" { spawn-sh "swaylock"; }
     MOD+ALT+A                           hotkey-overlay-title="Calendar: add appointment" { spawn-sh "$HOME/.config/rofi/scripts/quickadd.sh"; }
@@ -48,7 +48,7 @@ binds {
     MOD+ALT+V                           hotkey-overlay-title="Delete from Cliphist" {spawn-sh "cliphist list | rofi -p 'Delete' -dmenu -display-columns 2 | cliphist delete"; } 
 
     // Please choose your own file manager
-    MOD+E                             hotkey-overlay-title="File Manager: Nautilus" { spawn-sh "nautilus"; }
+    MOD+E                             hotkey-overlay-title="File Manager: Nautilus" { spawn-sh "dolphin"; }
 
     // ─── Audio Controls ───
     // Example volume keys mappings for PipeWire & WirePlumber.
@@ -205,6 +205,7 @@ binds {
         }
 
         struts {}
+        background-color "transparent"
     }
 
 // ────────────── Animation Settings ──────────────
@@ -244,7 +245,7 @@ binds {
 
 cursor {
   xcursor-theme "capitaine-cursors"
-  xcursor-size 22
+  xcursor-size 20
 
   hide-when-typing
   hide-after-inactive-ms 1000
@@ -262,6 +263,10 @@ cursor {
         geometry-corner-radius 8// Set every window radius to 20
         clip-to-geometry true
     }
+layer-rule {
+  match namespace="^swww-daemon$"
+  place-within-backdrop true
+}
 
 // ────────────── Environment Variables ──────────────
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Miscellaneous#environment
@@ -269,7 +274,6 @@ cursor {
     environment {
         DISPLAY ":1"
         ELECTRON_OZONE_PLATFORM_HINT "auto"
-        QT_QPA_PLATFORM "wayland"
         QT_WAYLAND_DISABLE_WINDOWDECORATION "1"
         XDG_SESSION_TYPE "wayland"
         XDG_CURRENT_DESKTOP "niri"

@@ -1,5 +1,5 @@
 configuration {
-    modes: "window,drun,run,ssh";
+    modes: "window,drun,run,recursivebrowser";
     font: "Fiera Sans Semibold 12";
 
     drun-display-format: "{name}";
@@ -12,6 +12,12 @@ configuration {
     display-window: "  ";
     display-combi:  """;
     show-icons:     true;
+
+    recursivebrowser {
+      directory: "~";
+      filter-regex: "(.*cache.*|.*\.o)";
+      command: "xdg-open";
+    }
 }
 
 @theme "~/.config/rofi/nord.rasi"

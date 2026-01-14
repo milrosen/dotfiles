@@ -1,5 +1,5 @@
 #!/bin/bash
-options="Shutdown\nReboot\nLogout\nSuspend\nLock"
+options="Suspend\nReboot\nShutdown\nLogout\nLock"
 chosen=$(echo -e "$options" | rofi -i -dmenu -theme-str 'listview { lines: 5; }' -p "Power Menu")
 
 case $chosen in
