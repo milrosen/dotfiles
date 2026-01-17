@@ -7,7 +7,13 @@ return {
           explorer = {
             -- Set auto_close to true
             auto_close = true,
+            hidden = true,
+            ignored = true,
           },
+          files = {
+            hidden = true,
+            ignored = true
+          }
         },
       },
     },

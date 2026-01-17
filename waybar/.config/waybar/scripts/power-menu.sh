@@ -1,6 +1,6 @@
 #!/bin/bash
 options="Suspend\nReboot\nShutdown\nLogout\nLock"
-chosen=$(echo -e "$options" | rofi -i -dmenu -theme-str 'listview { lines: 5; }' -p "Power Menu")
+chosen=$(echo -e "$options" | walker --theme=nordic --dmenu -p "Power Menu")
 
 case $chosen in
   "Shutdown") systemctl poweroff ;;
