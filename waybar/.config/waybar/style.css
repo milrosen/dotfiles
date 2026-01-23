@@ -40,7 +40,7 @@ window#waybar {
 }
 
 #workspaces button.active {
-    color: @nord7;
+    color: @nord8;
 }
 #window {
     margin-right: 40px;

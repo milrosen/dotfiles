@@ -3,7 +3,7 @@
   "niri/workspaces": {
     "format": "{icon}",
     "format-icons": {
-      "active": "",
+      "active": "",
       "default": ""
     },
     "on-click": "activate",
