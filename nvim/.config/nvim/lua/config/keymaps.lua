@@ -5,3 +5,5 @@
 local map = vim.keymap.set
 
 map("i", "jh", "<Esc>")
+map('n','<leader>aD', ':lua vim.fn.system("rm -rf ~/.local/state/nvim/avante")', { noremap = true, silent = true})
+map("n","<leader>k", "z=", { desc = "Spell suggestions", silent = true })

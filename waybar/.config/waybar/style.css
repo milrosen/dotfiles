@@ -8,11 +8,11 @@
 }
 
 window#waybar {
-    background-color: @nord0;
+    background-color: rgba(46, 52, 64, 0.8);
     color: @nord4;
     font-size: 12px;
     font-weight: bold;
-    border-radius: 4px 4px 0px 0px; 
+    border-radius: 0px; 
 }
 
 #clock,

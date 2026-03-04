@@ -32,6 +32,16 @@ input {
     scale 1 // No scaling (use 2 for HiDPI)
 }
 
+blur {
+  noise 0.012
+}
+
+overview {
+  workspace-shadow {
+    off
+  }
+}
+
 // ────────────── Keybindings ──────────────
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Key-Bindings
 
@@ -40,8 +50,8 @@ binds {
 
     // ─── Applications ───
     MOD+RETURN                          hotkey-overlay-title="Open Terminal: alacritty" { spawn-sh "alacritty"; }
-    MOD+SPACE                           hotkey-overlay-title="Open App Launcher: vicinae" { spawn-sh "vicinae open"; }
-    MOD+B                               hotkey-overlay-title="Open Browser: firefox" { spawn-sh "firefox"; }
+    MOD+SPACE                           hotkey-overlay-title="Open App Launcher: vicinae" { spawn "vicinae" "toggle"; }
+    MOD+B                               hotkey-overlay-title="Open Browser: firefox" { spawn-sh "qutebrowser"; }
     MOD+ALT+L                           hotkey-overlay-title="Lock Screen: swaylock" { spawn-sh "swaylock"; }
     MOD+ALT+A                           hotkey-overlay-title="Calendar: add appointment" { spawn-sh "$HOME/.config/niri/scripts/quickadd.sh"; }
     MOD+V                               hotkey-overlay-title="Open Paste Menu" { spawn-sh "vicinae vicinae://extensions/vicinae/clipboard/history"; }
@@ -268,6 +278,14 @@ cursor {
     
     layer-rule {
       match namespace="^vicinae$"
+      background-effect {
+        blur true
+        xray false
+      }
+    }
+
+    layer-rule {
+      match namespace="^waybar$"
       background-effect {
         blur true
         xray false

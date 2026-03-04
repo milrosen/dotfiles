@@ -6,9 +6,15 @@ return {
     build = vim.fn.has("win32") ~= 0 and "powershell -ExecutionPolicy Bypass -File Build.ps1 -BuildFromSource false"
       or "make",
     event = "VeryLazy",
+    lazy=false,
     version = false, -- Never set this value to "*"! Never!
     ---@module 'avante'
     ---@type avante.Config
+    highlights = {
+      AvanteSidebarNormal = { link = "Normal" },
+      AvanteSidebarWinSeparator = { link = "WinSeparator" },
+      AvanteSidebarWinHorizontalSeparator = { fg = "purple", bg = "NONE" },
+    },
     opts = {
       behaviour = {
         auto_apply_diff_after_generation = true
@@ -19,15 +25,16 @@ return {
       -- this file can contain specific instructions for your project
       instructions_file = "avante.md",
       -- for example
-      provider = "claude",
+      provider = "openai",
       providers = {
-        claude = {
-          endpoint = "https://api.anthropic.com",
-          model = "claude-sonnet-4-20250514",
+        openai = {
+          endpoint = "https://api.openai.com/v1",
+          model = "gpt-5-codex",
           timeout = 30000, -- Timeout in milliseconds
+          disable_tools = true,
           extra_request_body = {
             temperature = 0.75,
-            max_tokens = 20480,
+            max_completion_tokens = 20480,
           },
         },
       },
