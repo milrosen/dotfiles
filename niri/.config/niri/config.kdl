@@ -52,10 +52,11 @@ binds {
     MOD+RETURN                          hotkey-overlay-title="Open Terminal: alacritty" { spawn-sh "alacritty"; }
     Mod+Space                                                                           { spawn-sh "qs -c noctalia-shell ipc call launcher toggle"; }
     Mod+S                                                                               { spawn-sh "qs -c noctalia-shell ipc call controlCenter toggle"; }
+    MOD+V                                                                               { spawn-sh "qs -c noctalia-shell ipc call launcher clipboard"; }
+
     MOD+B                               hotkey-overlay-title="Open Browser: firefox" { spawn-sh "qutebrowser"; }
     MOD+ALT+L                           hotkey-overlay-title="Lock Screen: swaylock" { spawn-sh "swaylock"; }
     MOD+ALT+A                           hotkey-overlay-title="Calendar: add appointment" { spawn-sh "$HOME/.config/niri/scripts/quickadd.sh"; }
-    MOD+V                               hotkey-overlay-title="Open Paste Menu" { spawn-sh "vicinae vicinae://extensions/vicinae/clipboard/history"; }
     MOD+ALT+V                           hotkey-overlay-title="Delete from Cliphist" {spawn-sh "cliphist list | walker -d -p 'Delete' --theme=nordic | cliphist delete"; } 
 
     // Please choose your own file manager
