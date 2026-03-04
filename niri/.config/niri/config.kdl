@@ -50,7 +50,8 @@ binds {
 
     // ─── Applications ───
     MOD+RETURN                          hotkey-overlay-title="Open Terminal: alacritty" { spawn-sh "alacritty"; }
-    MOD+SPACE                           hotkey-overlay-title="Open App Launcher: vicinae" { spawn "vicinae" "toggle"; }
+    Mod+Space                                                                           { spawn-sh "qs -c noctalia-shell ipc call launcher toggle"; }
+    Mod+S                                                                               { spawn-sh "qs -c noctalia-shell ipc call controlCenter toggle"; }
     MOD+B                               hotkey-overlay-title="Open Browser: firefox" { spawn-sh "qutebrowser"; }
     MOD+ALT+L                           hotkey-overlay-title="Lock Screen: swaylock" { spawn-sh "swaylock"; }
     MOD+ALT+A                           hotkey-overlay-title="Calendar: add appointment" { spawn-sh "$HOME/.config/niri/scripts/quickadd.sh"; }
@@ -184,15 +185,11 @@ binds {
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Miscellaneous#spawn-sh-at-startup
 
     spawn-sh-at-startup "/usr/lib/polkit-kde-authentication-agent-1 &" // Polkit
-    spawn-sh-at-startup "swww-daemon" // Wallpaper daemon
-    spawn-sh-at-startup "swww img /usr/share/wallpapers/personal-wallpapers/metropolis_blue.png" // Set wallpaper
 
     spawn-sh-at-startup "wl-paste --type text --watch cliphist store" // start cliphist text
     spawn-sh-at-startup "wl-paste --type image --watch cliphist store"
 
-    spawn-at-startup "vicinae" "server"
-
-    spawn-sh-at-startup "waybar" // Launch waybar
+    spawn-at-startup "qs" "-c" "noctalia-shell"
 
     prefer-no-csd // Disable program decorations
     screenshot-path "~/Downloads"// Disable screenshot saving
@@ -212,7 +209,7 @@ binds {
 
         focus-ring {
             width 2
-            active-color "#88c0d0"
+            active-color "#ada996"
             inactive-color "#2e3440CC"
         }
 
@@ -285,7 +282,7 @@ cursor {
     }
 
     layer-rule {
-      match namespace="^waybar$"
+      match namespace="^noctalia-background-.*$"
       background-effect {
         blur true
         xray false
@@ -302,10 +299,11 @@ cursor {
         open-floating true // Always float Firefox PiP windows
         geometry-corner-radius 10
     }
-layer-rule {
-  match namespace="^swww-daemon$"
-  place-within-backdrop true
-}
+    
+    layer-rule {
+        match namespace="^noctalia-wallpaper*"
+        place-within-backdrop true
+    }
 
 // ────────────── Environment Variables ──────────────
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Miscellaneous#environment
