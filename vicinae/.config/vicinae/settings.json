@@ -11,10 +11,11 @@
 {
    "$schema": "https://vicinae.com/schemas/config.json",
    "close_on_focus_loss": true,
+   "pop_to_root_on_close": true,
    "search_files_in_root": true,
    "font": {
       "normal": {
-         "family": "JetBrainsMonoNL NFP"
+         "family": "JetBrainsMono Nerd Font Mono"
       }
    },
    "theme": {
@@ -32,19 +33,6 @@
       "toggle-action-panel": "control+B"
    },
    "providers": {
-      "@ThatNerd/store.raycast.timers": {
-         "preferences": {
-            "ringContinuously": false,
-            "selectedSound": "fluteRiff.wav"
-         }
-      },
-      "@knoopx/store.vicinae.niri": {
-         "entrypoints": {
-            "power-off-monitors": {
-               "enabled": false
-            }
-         }
-      },
       "@mommertf/store.raycast.slack": {
          "entrypoints": {
             "open-unread-messages": {

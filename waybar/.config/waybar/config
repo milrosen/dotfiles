@@ -6,10 +6,12 @@
   "margin-right": 0,
   "spacing": 0,
   "include": [
-    "~/.config/waybar/modules.json"
+    "~/.config/waybar/modules.jsonc"
   ],
   "modules-left": [
-    "niri/workspaces"
+    "custom/overview",
+    "niri/workspaces",
+    "niri/window"
   ],
   "modules-center": [
     "clock",

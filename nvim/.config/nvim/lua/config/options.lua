@@ -7,4 +7,4 @@ vim.g.nord_cursorline_transparent = true
 vim.g.autoformat = false
 vim.opt.swapfile = false
 vim.opt.cursorline = false
-
+vim.g.lazyvim_php_lsp = "intelephense"

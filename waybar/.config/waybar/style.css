@@ -14,10 +14,10 @@ window#waybar {
     font-weight: bold;
     border-radius: 0px; 
 }
-
 #clock,
 #cpu,
 #memory,
+#custom-overview,
 #mode,
 #network,
 #battery,
@@ -47,6 +47,14 @@ window#waybar {
     margin-left: 40px;
     font-weight: normal;
 }
+
+#custom-overview {
+  margin-right: 1px;
+  margin-left: -5px;
+  padding: 0 12px;
+  font-size: medium;
+}
+
 #pulseaudio,
 #network,
 #battery,

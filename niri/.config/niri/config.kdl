@@ -8,7 +8,6 @@ input {
     keyboard {
         xkb {
             layout "us" // Use the German keyboard layout
-            options "caps:super"
         }
         numlock // Enable numlock on startup
     }
@@ -41,7 +40,6 @@ overview {
     off
   }
 }
-
 // ────────────── Keybindings ──────────────
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Key-Bindings
 
@@ -51,14 +49,15 @@ binds {
     // ─── Applications ───
     MOD+RETURN                          hotkey-overlay-title="Open Terminal: alacritty" { spawn-sh "alacritty"; }
     MOD+SPACE                           hotkey-overlay-title="Open App Launcher: vicinae" { spawn "vicinae" "toggle"; }
-    MOD+B                               hotkey-overlay-title="Open Browser: firefox" { spawn-sh "qutebrowser"; }
+    MOD+B                               hotkey-overlay-title="Open Browser" { spawn-sh "qutebrowser"; }
     MOD+ALT+L                           hotkey-overlay-title="Lock Screen: swaylock" { spawn-sh "swaylock"; }
-    MOD+ALT+A                           hotkey-overlay-title="Calendar: add appointment" { spawn-sh "$HOME/.config/niri/scripts/quickadd.sh"; }
-    MOD+V                               hotkey-overlay-title="Open Paste Menu" { spawn-sh "vicinae vicinae://extensions/vicinae/clipboard/history"; }
+    MOD+V                               hotkey-overlay-title="Open Paste Menu" { spawn-sh "vicinae vicinae://launch/clipboard/history"; }
     MOD+ALT+V                           hotkey-overlay-title="Delete from Cliphist" {spawn-sh "cliphist list | walker -d -p 'Delete' --theme=nordic | cliphist delete"; } 
+    MOD+N                               hotkey-overlay-title="Invoke mako notification" { spawn-sh "makoctl invoke"; }
+    MOD+ALT+N                           hotkey-overlay-title="Dismiss mako notification" { spawn-sh "makoctl dismiss"; }
 
     // Please choose your own file manager
-    MOD+E                             hotkey-overlay-title="File Manager: Nautilus" { spawn-sh "dolphin"; }
+    MOD+E                             hotkey-overlay-title="File Manager: Nautilus" { spawn-sh "alacritty -e /usr/bin/nnn"; }
 
     // ─── Audio Controls ───
     // Example volume keys mappings for PipeWire & WirePlumber.
@@ -184,11 +183,12 @@ binds {
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Miscellaneous#spawn-sh-at-startup
 
     spawn-sh-at-startup "/usr/lib/polkit-kde-authentication-agent-1 &" // Polkit
-    spawn-sh-at-startup "swww-daemon" // Wallpaper daemon
-    spawn-sh-at-startup "swww img /usr/share/wallpapers/personal-wallpapers/metropolis_blue.png" // Set wallpaper
+    spawn-sh-at-startup "awww-daemon" // Wallpaper daemon
+    spawn-sh-at-startup "awww img /usr/share/wallpapers/personal-wallpapers/metropolis_blue.png" // Set wallpaper
 
     spawn-sh-at-startup "wl-paste --type text --watch cliphist store" // start cliphist text
     spawn-sh-at-startup "wl-paste --type image --watch cliphist store"
+    spawn-sh-at-startup "kmonad ~/.config/kmonad/config.kbd"
 
     spawn-at-startup "vicinae" "server"
 
@@ -270,6 +270,7 @@ cursor {
     window-rule {
         geometry-corner-radius 8
         clip-to-geometry true
+        draw-border-with-background false
         background-effect {
           blur true
           xray true
@@ -292,6 +293,14 @@ cursor {
       }
     }
 
+    layer-rule {
+      match namespace="^notifications$"
+      background-effect {
+        blur true
+        xray false
+      }
+    }
+
     window-rule {
         match app-id=r#"firefox"# 
         geometry-corner-radius 10
@@ -303,7 +312,7 @@ cursor {
         geometry-corner-radius 10
     }
 layer-rule {
-  match namespace="^swww-daemon$"
+  match namespace="^awww-daemon$"
   place-within-backdrop true
 }
 

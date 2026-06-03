@@ -46,6 +46,11 @@
     },
     "separate-outputs": true
   },
+  "custom/overview": {
+      "format": "󰕰",
+      "tooltip": false,
+      "on-click": "niri msg action toggle-overview"
+  },
   // Empty
   "custom/empty": {
     "format": ""

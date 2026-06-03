@@ -9,15 +9,16 @@ return {
     lazy=false,
     version = false, -- Never set this value to "*"! Never!
     ---@module 'avante'
-    ---@type avante.Config
     highlights = {
       AvanteSidebarNormal = { link = "Normal" },
       AvanteSidebarWinSeparator = { link = "WinSeparator" },
       AvanteSidebarWinHorizontalSeparator = { fg = "purple", bg = "NONE" },
     },
+    ---@type avante.Config
     opts = {
       behaviour = {
-        auto_apply_diff_after_generation = true
+        auto_apply_diff_after_generation = true,
+        enable_fastapply = false,
       },
       mode = 'legacy',
       hints = { enabled = true },
@@ -38,6 +39,12 @@ return {
           },
         },
       },
+      acp_providers = {},
+      rules = {},
+      windows = {},
+      slash_commands= {},
+      shortcuts = {},
+      ask_opts = {},
     },
     dependencies = {
       "nvim-lua/plenary.nvim",
