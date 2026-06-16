@@ -121,7 +121,7 @@
       "critical": 15
     },
     "format": "{icon}",
-    "format-charging": " ",
+    "format-charging": "󰂄 ",
     "format-plugged": " ",
     "format-alt": "{icon}  {capacity}% {time} ",
     // "format-good": "", // An empty format will hide the module

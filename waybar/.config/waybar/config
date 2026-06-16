@@ -9,7 +9,6 @@
     "~/.config/waybar/modules.jsonc"
   ],
   "modules-left": [
-    "custom/overview",
     "niri/workspaces",
     "niri/window"
   ],
